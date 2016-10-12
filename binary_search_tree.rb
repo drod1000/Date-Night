@@ -107,9 +107,7 @@ class BinarySearchTree
 
   def load
     file = File.new('movies.txt', 'r')
-    file.each do |line|
-      puts line.split(',' ,  2)
-    end
+    p lines = file.readlines
   end
 end
 

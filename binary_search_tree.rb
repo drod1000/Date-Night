@@ -77,18 +77,18 @@ class BinarySearchTree
 
   def max
     highest = root
-    if highest.right_child
+    until highest.right_child == nil
       highest = highest.right_child
     end
-    return highest
+    return highest.score
   end
 
   def min
     lowest = root
-    if lowest.left_child
+    until lowest.left_child == nil
       lowest = lowest.left_child
     end
-    return lowest
+    return lowest.score
   end
 
   def sort(node,array)

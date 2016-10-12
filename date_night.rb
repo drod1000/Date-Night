@@ -10,19 +10,13 @@ end
 =end
 
 tree = BinarySearchTree.new
-tree.insert(61, "Bill & Ted's Excellent Adventure")
-tree.insert(16, "Johnny English")
-tree.insert(92, "Sharknado 3")
-tree.insert(50, "Hannibal Buress: Animal Furnace")
 
-tree.include?(16)
-tree.include?(65)
+tree.insert(98, "Animals United")
+tree.insert(58, "Armageddon")
+tree.insert(36, "Bill & Ted's Bogus Journey")
+tree.insert(93, "Bill & Ted's Excellent Adventure")
+tree.insert(86, "Charlie's Angels")
+tree.insert(38, "Charlie's Country")
+tree.insert(69, "Collateral Damage")
 
-tree.max
-tree.min
-
-p tree.depth_of(85)
-p tree.depth_of(16)
-p tree.depth_of(50)
-
-tree.sort(tree.root,[])
+binding.pry

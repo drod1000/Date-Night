@@ -9,16 +9,14 @@ class DateNightTest < Minitest::Test
     assert tree
   end
 
+  def test_it_can_create_a_node
+    node = Node.new("Some Movie", 20)
+    assert node
+  end
+
   def test_it_can_insert
     tree = BinarySearchTree.new
     tree.insert("Some Movie", 20)
     assert tree.root
-  end
-
-  def test_it_can_confirm_score_is_in_tree
-    tree = BinarySearchTree.new
-    tree.insert("Some Movie", 20)
-    assert tree.include?(20)
-  end
-  
+  end  
 end

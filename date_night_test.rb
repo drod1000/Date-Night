@@ -114,4 +114,9 @@ class DateNightTest < Minitest::Test
     tree.insert(69, "Collateral Damage")
     assert_equal [{"Bill & Ted's Bogus Journey"=>36}, {"Charlie's Country"=>38}, {"Armageddon"=>58}, {"Collateral Damage"=>69}, {"Charlie's Angels"=>86}, {"Bill & Ted's Excellent Adventure"=>93}, {"Animals United"=>98}], tree.sort(tree.root,[])
   end
+
+  def test_it_can_load_a_file
+    tree = BinarySearchTree.new
+    assert tree.load
+  end
 end

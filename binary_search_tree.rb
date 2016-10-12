@@ -104,5 +104,12 @@ class BinarySearchTree
     end
    return array
    end
+
+  def load
+    file = File.new('movies.txt', 'r')
+    file.each do |line|
+      puts line.split(',' ,  2)
+    end
+  end
 end
 

@@ -2,12 +2,8 @@ require_relative 'binary_search_tree'
 require_relative 'node'
 require 'rubygems'
 
-=begin
-file = File.new('movies.txt', 'r')
-file.each do |line|
-    puts line.split(',' ,  2)
-end
-=end
+
+
 
 tree = BinarySearchTree.new
 

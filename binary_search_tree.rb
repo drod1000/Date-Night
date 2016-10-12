@@ -12,24 +12,24 @@ class BinarySearchTree
       return 1
     end
   end
-    def place_node(root, score, title)
+  def place_node(root, score, title)
     ##Must account for == case
-        depth = 2
-        if score < root.score
-          if root.left_child
-            depth += 1
-            place_node(root.left_child, score, title)
-          else
-            root.left_child = Node.new(score, title)
-          end
+    depth = 2
+      if score < root.score
+        if root.left_child
+          depth += 1
+          place_node(root.left_child, score, title)
         else
-          if root.right_child
-            depth +=1
-            place_node(root.right_child, score, title)
-          else
-            root.right_child = Node.new(score, title)
-          end
+          root.left_child = Node.new(score, title)
         end
+      else
+        if root.right_child
+          depth +=1
+          place_node(root.right_child, score, title)
+        else
+          root.right_child = Node.new(score, title)
+        end
+      end
     return depth
   end
   

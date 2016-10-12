@@ -16,19 +16,20 @@ class BinarySearchTree
     ##Must account for == case
         depth = 2
         if score < root.score
-            if root.left_child == nil
-                root.left_child = Node.new(score, title)
-            else
-                depth += 1
-                place_node(root.left_child, score, title)
-            end
+          
+          if root.left_child == nil
+            root.left_child = Node.new(score, title)
+          else
+            depth += 1
+            place_node(root.left_child, score, title)
+          end
         else
-            if root.right_child == nil
-                root.right_child = Node.new(score, title)
-            else
-                depth +=1
-                place_node(root.right_child, score, title)
-            end
+          if root.right_child == nil
+            root.right_child = Node.new(score, title)
+          else
+            depth +=1
+            place_node(root.right_child, score, title)
+          end
         end
     return depth
   end
@@ -45,31 +46,31 @@ class BinarySearchTree
   def search(score)
     current = root
     until current == nil || current.score == score
-        if score < current.score
-            current = current.left_child
-        else
-            current = current.right_child
-        end
+      if score < current.score
+        current = current.left_child
+      else
+        current = current.right_child
+      end
      end
-     return current 
+    return current 
   end
   
   def depth_of(score)
     current = root
     depth = 1
     if search(score) == nil
-        return nil
+      return nil
     else
-        until current.score == score
-            if score < current.score
-                depth += 1
-                current = current.left_child
-            else
-                depth +=1
-                current = current.right_child
-            end
+      until current.score == score
+        if score < current.score
+          depth += 1
+          current = current.left_child
+        else
+          depth +=1
+          current = current.right_child
         end
-        return depth
+      end
+      return depth
     end
   end
 

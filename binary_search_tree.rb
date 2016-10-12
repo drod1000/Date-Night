@@ -12,6 +12,7 @@ class BinarySearchTree
       return 1
     end
   end
+  
   def place_node(root, score, title)
     ##Must account for == case
     depth = 2
@@ -88,6 +89,7 @@ class BinarySearchTree
     end
     return lowest
   end
+
   def sort(node,array)
     if node.left_child
       sort(node.left_child,array) 

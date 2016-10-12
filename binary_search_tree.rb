@@ -5,14 +5,13 @@ class BinarySearchTree
   attr_reader :root
 
   def insert(score, title)
-    if root == nil
-            @root = Node.new(score,title)
-            return 1
-        else
-            place_node(root, score, title)
-        end
+    if root
+      place_node(root, score, title)
+    else
+      @root = Node.new(score, title)
+      return 1
     end
-    
+  end
     def place_node(root, score, title)
     ##Must account for == case
         depth = 2

@@ -14,9 +14,40 @@ class DateNightTest < Minitest::Test
     assert node
   end
 
-  def test_it_can_insert
+  def test_it_can_insert_once
     tree = BinarySearchTree.new
     tree.insert("Some Movie", 20)
     assert tree.root
   end  
+  
+  def test_it_can_find_max
+    tree = BinarySearchTree.new
+    
+    tree.insert(98, "Animals United")
+    tree.insert(58, "Armageddon")
+    tree.insert(36, "Bill & Ted's Bogus Journey")
+    tree.insert(93, "Bill & Ted's Excellent Adventure")
+    tree.insert(86, "Charlie's Angels")
+    tree.insert(38, "Charlie's Country")
+    tree.insert(69, "Collateral Damage")
+    
+    hash = {"Animals United"=>98}
+    assert_equal hash, tree.max
+  end
+
+  def test_it_can_fin_min
+    tree = BinarySearchTree.new
+    
+    tree.insert(98, "Animals United")
+    tree.insert(58, "Armageddon")
+    tree.insert(36, "Bill & Ted's Bogus Journey")
+    tree.insert(93, "Bill & Ted's Excellent Adventure")
+    tree.insert(86, "Charlie's Angels")
+    tree.insert(38, "Charlie's Country")
+    tree.insert(69, "Collateral Damage")
+
+    hash = {"Bill & Ted's Bogus Journey"=>36}
+    assert_equal hash, tree.min
+  end
+
 end

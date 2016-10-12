@@ -57,7 +57,7 @@ class BinarySearchTree
   
   def depth_of(score)
     current = root
-    depth = 1
+    depth = 0
     if search(score)
       until current.score == score
         if score < current.score
@@ -80,7 +80,8 @@ class BinarySearchTree
     until highest.right_child == nil
       highest = highest.right_child
     end
-    return highest.score
+    max = {highest.title => highest.score}
+    return max
   end
 
   def min
@@ -88,7 +89,8 @@ class BinarySearchTree
     until lowest.left_child == nil
       lowest = lowest.left_child
     end
-    return lowest.score
+    min = {lowest.title => lowest.score}
+    return min
   end
 
   def sort(node,array)

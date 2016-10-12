@@ -1,4 +1,5 @@
 require_relative 'node'
+require 'pry'
 
 class BinarySearchTree
   attr_reader :root
@@ -88,15 +89,15 @@ class BinarySearchTree
     end
     return lowest
   end
-  def sort(node)
+  def move_through_tree(node,array)
     if node.left_child
-      sort(node.left_child) 
+      move_through_tree(node.left_child,array) 
     end
-    p node.score
+    array << node.score
     if node.right_child
-      sort(node.right_child)
+      move_through_tree(node.right_child,array)
     end
-
-  end
+   return array
+   end
 end
 

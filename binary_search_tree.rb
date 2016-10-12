@@ -89,11 +89,12 @@ class BinarySearchTree
     end
     return lowest
   end
-  def move_through_tree(node,array)
+  def sort(node,array)
     if node.left_child
       move_through_tree(node.left_child,array) 
     end
-    array << node.score
+    hash = {node.title => node.score}
+    array << hash
     if node.right_child
       move_through_tree(node.right_child,array)
     end

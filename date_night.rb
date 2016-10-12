@@ -23,4 +23,4 @@ tree.depth_of(85)
 tree.depth_of(16)
 tree.depth_of(50)
 
-p tree.move_through_tree(tree.root,[])
+p sort(tree.root,[])

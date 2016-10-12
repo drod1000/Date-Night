@@ -15,14 +15,14 @@ tree.insert(16, "Johnny English")
 tree.insert(92, "Sharknado 3")
 tree.insert(50, "Hannibal Buress: Animal Furnace")
 
-p tree.include?(16)
-p tree.include?(65)
+tree.include?(16)
+tree.include?(65)
 
 tree.max
 tree.min
 
-tree.depth_of(85)
-tree.depth_of(16)
-tree.depth_of(50)
+p tree.depth_of(85)
+p tree.depth_of(16)
+p tree.depth_of(50)
 
 tree.sort(tree.root,[])

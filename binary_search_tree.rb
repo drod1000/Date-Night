@@ -58,9 +58,7 @@ class BinarySearchTree
   def depth_of(score)
     current = root
     depth = 1
-    if search(score) == nil
-      return nil
-    else
+    if search(score)
       until current.score == score
         if score < current.score
           depth += 1
@@ -70,8 +68,11 @@ class BinarySearchTree
           current = current.right_child
         end
       end
-      return depth
+    else
+      return nil
     end
+    return depth
+
   end
 
   def max

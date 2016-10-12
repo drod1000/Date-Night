@@ -2,10 +2,12 @@ require_relative 'binary_search_tree'
 require_relative 'node'
 require 'rubygems'
 
+=begin
 file = File.new('movies.txt', 'r')
 file.each do |line|
     puts line.split(',' ,  2)
 end
+=end
 
 tree = BinarySearchTree.new
 tree.insert(61, "Bill & Ted's Excellent Adventure")
@@ -16,11 +18,11 @@ tree.insert(50, "Hannibal Buress: Animal Furnace")
 tree.include?(16)
 tree.include?(65)
 
-p tree.max
-p tree.min
+tree.max
+tree.min
 
-tree.depth_of(85)
-tree.depth_of(16)
-tree.depth_of(50)
+p tree.depth_of(85)
+p tree.depth_of(16)
+p tree.depth_of(50)
 
-p sort(tree.root,[])
+tree.sort(tree.root,[])

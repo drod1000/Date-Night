@@ -91,12 +91,12 @@ class BinarySearchTree
   end
   def sort(node,array)
     if node.left_child
-      move_through_tree(node.left_child,array) 
+      sort(node.left_child,array) 
     end
     hash = {node.title => node.score}
     array << hash
     if node.right_child
-      move_through_tree(node.right_child,array)
+      sort(node.right_child,array)
     end
    return array
    end

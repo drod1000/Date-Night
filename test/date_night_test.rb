@@ -1,7 +1,8 @@
 # gem 'minitest', '~> 5.0'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative 'date_night'
+require '../lib/date_night'
+require '../lib/binary_search_tree'
 
 class DateNightTest < Minitest::Test
   def test_it_can_create_a_tree
@@ -14,10 +15,39 @@ class DateNightTest < Minitest::Test
     assert node
   end
 
-  def test_it_can_insert_once
+  def test_it_can_insert_root
     tree = BinarySearchTree.new
-    tree.insert("Some Movie", 20)
+    tree.insert(20, "Some Movie")
     assert tree.root
+  end
+
+  def test_it_can_insert_right
+    tree = BinarySearchTree.new
+    tree.insert(20, "Some Movie")
+    tree.insert(25, "Another Movie")
+    assert tree.root.right_child
+  end
+  def test_it_can_insert_left
+    tree = BinarySearchTree.new
+    tree.insert(25, "Another Movie")
+    tree.insert(20, "Some Movie")
+    assert tree.root.left_child
+  end
+
+  def test_it_can_insert_right_left
+    tree = BinarySearchTree.new
+    tree.insert(25, "Movie 1")
+    tree.insert(30, "Movie 2")
+    tree.insert(28, "Movie 3")
+    assert tree.root.right_child.left_child
+  end
+  
+  def test_it_can_insert_left_right
+    tree = BinarySearchTree.new
+    tree.insert(30, "Movie 1")
+    tree.insert(25, "Movie 2")
+    tree.insert(28, "Movie 3")
+    assert tree.root.left_child.right_child
   end
 
   def test_it_wont_insert_if_score_is_present
@@ -108,6 +138,17 @@ class DateNightTest < Minitest::Test
     tree.insert(69, "Collateral Damage")
     assert_equal 2, tree.depth_of(36)
   end
+
+  def test_it_can_sort
+    tree = BinarySearchTree.new
+    
+    tree.insert(98, "Animals United")
+    tree.insert(58, "Armageddon")
+    tree.insert(36, "Bill & Ted's Bogus Journey")
+    tree.insert(93, "Bill & Ted's Excellent Adventure")
+    tree.insert(86, "Charlie's Angels")
+    assert_equal [{"Bill & Ted's Bogus Journey"=>36}, {"Armageddon"=>58}, {"Charlie's Angels"=>86}, {"Bill & Ted's Excellent Adventure"=>93}, {"Animals United"=>98}], tree.sort(tree.root,[])
+  end
   
   def test_it_can_return_array_containing_sorted_hashes
     tree = BinarySearchTree.new
@@ -120,10 +161,5 @@ class DateNightTest < Minitest::Test
     tree.insert(38, "Charlie's Country")
     tree.insert(69, "Collateral Damage")
     assert_equal [{"Bill & Ted's Bogus Journey"=>36}, {"Charlie's Country"=>38}, {"Armageddon"=>58}, {"Collateral Damage"=>69}, {"Charlie's Angels"=>86}, {"Bill & Ted's Excellent Adventure"=>93}, {"Animals United"=>98}], tree.sort(tree.root,[])
-  end
-
-  def test_it_can_load_a_file
-    tree = BinarySearchTree.new
-    assert tree.load
   end
 end

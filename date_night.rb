@@ -15,7 +15,5 @@ tree.insert(86, "Charlie's Angels")
 tree.insert(38, "Charlie's Country")
 tree.insert(69, "Collateral Damage")
 
-tree.load
-binding.pry
       
 

@@ -16,7 +16,9 @@ class BinarySearchTree
   def place_node(root, score, title)
     ##Must account for == case
     depth = 1
-      if score < root.score
+      if search(score)
+
+      elsif score < root.score
         if root.left_child
           depth += 1
           place_node(root.left_child, score, title)
@@ -125,6 +127,7 @@ class BinarySearchTree
     clean_titles = titles.map do |title|
       title.chomp
     end
+    counter = 0
     99.times do |index|
       insert(int_scores[index], clean_titles[index])
     end

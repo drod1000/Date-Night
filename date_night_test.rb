@@ -18,6 +18,13 @@ class DateNightTest < Minitest::Test
     tree = BinarySearchTree.new
     tree.insert("Some Movie", 20)
     assert tree.root
+  end
+
+  def test_it_wont_insert_if_score_is_present
+    tree = BinarySearchTree.new
+    tree.insert(98, "Animals United")
+    tree.insert(98, "Armageddon")
+    assert_equal tree.root.title, "Animals United"
   end  
   
   def test_it_can_find_score_that_is_in_tree

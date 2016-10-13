@@ -127,10 +127,15 @@ class BinarySearchTree
       title.chomp
     end
     counter = 0
-    99.times do |index|
-      insert(int_scores[index], clean_titles[index])
+    int_scores.length.times do |index|
+      if search(int_scores[index])
+      binding.pry
+      else
+        insert(int_scores[index], clean_titles[index])
+        counter += 1
+      end
     end
-end
-
+    return counter
+  end
 end
 

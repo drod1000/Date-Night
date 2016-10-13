@@ -7,13 +7,11 @@ require 'rubygems'
 
 tree = BinarySearchTree.new
 
+tree.insert(61, "Bill & Ted's Excellent Adventure")
+tree.insert(16, "Johnny English")
+tree.insert(92, "Sharknado 3")
+tree.insert(50, "Hannibal Buress: Animal Furnace")
 
-tree.insert(98, "Animals United")
-tree.insert(58, "Armageddon")
-tree.insert(36, "Bill & Ted's Bogus Journey")
-tree.insert(93, "Bill & Ted's Excellent Adventure")
-tree.insert(86, "Charlie's Angels")
-tree.insert(38, "Charlie's Country")
-tree.insert(69, "Collateral Damage")
+binding.pry
       
 

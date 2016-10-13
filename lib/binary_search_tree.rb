@@ -17,7 +17,6 @@ class BinarySearchTree
     ##Must account for == case
     depth = 1
       if search(score)
-
       elsif score < root.score
         if root.left_child
           depth += 1

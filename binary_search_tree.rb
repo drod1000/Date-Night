@@ -9,13 +9,13 @@ class BinarySearchTree
       place_node(root, score, title)
     else
       @root = Node.new(score, title)
-      return 1
+      return 0
     end
   end
   
   def place_node(root, score, title)
     ##Must account for == case
-    depth = 2
+    depth = 1
       if score < root.score
         if root.left_child
           depth += 1
@@ -105,7 +105,7 @@ class BinarySearchTree
    return array
    end
 
-  def file_to_array
+  def load
     file = File.new('movies.txt', 'r')
     split_file = file.map do |line|
       line.split(',', 2)
@@ -119,11 +119,14 @@ class BinarySearchTree
     titles = split_file_array.collect do |index|
       index[1]
     end
-    int_score = scores.map do |number|
+    int_scores = scores.map do |number|
       number.to_i
     end
     clean_titles = titles.map do |title|
       title.chomp
+    end
+    99.times do |index|
+      insert(int_scores[index], clean_titles[index])
     end
 end
 

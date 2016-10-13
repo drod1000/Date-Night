@@ -1,5 +1,6 @@
 require 'pry'
-
+scores = []
+titles = []
 
 file = File.new('movies.txt', 'r')
     split_file = file.map do |line|
@@ -19,15 +20,5 @@ end
 clean_titles = titles.map do |title|
   title.chomp
 end
-  
-=begin
-split_file_array.pop
-p split_file_array
-split_file.each do |line|
-  line.each do |second_line|
-    puts second_line
-  end
-end
-=end
-p int_score
-p clean_titles
+
+binding.pry

@@ -150,16 +150,4 @@ class DateNightTest < Minitest::Test
     assert_equal [{"Bill & Ted's Bogus Journey"=>36}, {"Armageddon"=>58}, {"Charlie's Angels"=>86}, {"Bill & Ted's Excellent Adventure"=>93}, {"Animals United"=>98}], tree.sort(tree.root,[])
   end
   
-  def test_it_can_return_array_containing_sorted_hashes
-    tree = BinarySearchTree.new
-    
-    tree.insert(98, "Animals United")
-    tree.insert(58, "Armageddon")
-    tree.insert(36, "Bill & Ted's Bogus Journey")
-    tree.insert(93, "Bill & Ted's Excellent Adventure")
-    tree.insert(86, "Charlie's Angels")
-    tree.insert(38, "Charlie's Country")
-    tree.insert(69, "Collateral Damage")
-    assert_equal [{"Bill & Ted's Bogus Journey"=>36}, {"Charlie's Country"=>38}, {"Armageddon"=>58}, {"Collateral Damage"=>69}, {"Charlie's Angels"=>86}, {"Bill & Ted's Excellent Adventure"=>93}, {"Animals United"=>98}], tree.sort(tree.root,[])
-  end
 end
